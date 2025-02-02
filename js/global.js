@@ -1,6 +1,7 @@
 /**
  * @copyright solatpukhtunyar 2025
  * @author solat <solatpukhtunyar123@gmail.com>
+ * @creditsTo sadee <codewithsadee@gmail.com>
  */
 
 "use strict";
@@ -48,3 +49,15 @@ addEventOnElements($navTogglers, "click", function () {
  * */
 
 window.filterObj = {};
+
+/**
+ * Initial favourite object in local storage
+ */
+
+if (!window.localStorage.getItem("favourite")) {
+  const /** {Object} */ favouriteObj = {
+      photos: {},
+      videos: {},
+    };
+  window.localStorage.setItem("favourite", JSON.stringify(favouriteObj));
+}
