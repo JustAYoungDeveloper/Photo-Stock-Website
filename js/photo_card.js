@@ -11,6 +11,7 @@
  */
 
 import { ripple } from "./utils/ripple.js";
+import { favorite } from "./favorite.js";
 
 /**
  * Create Photo Card
@@ -20,7 +21,6 @@ import { ripple } from "./utils/ripple.js";
 
 export const photoCard = (photo) => {
   const /** {String} */ root = window.location.origin;
-  console.log(photo);
 
   const {
     alt,
@@ -34,6 +34,10 @@ export const photoCard = (photo) => {
   const /** {NodeElement} */ $card = document.createElement("div");
   $card.classList.add("card", "grid-item");
   $card.style.backgroundColor = backdropColor;
+
+  const /** {Object} */ favoriteObj = JSON.parse(
+      window.localStorage.getItem("favorite")
+    );
 
   $card.innerHTML = `
                     <figure
@@ -52,7 +56,9 @@ export const photoCard = (photo) => {
 
                     <div class="card-content">
                     <button
-                      class="icon-btn small"
+                      class="icon-btn small ${
+                        favoriteObj.photos[id] ? "active" : ""
+                      }"
                       aria-label="Add to favorite"
                       data-ripple
                       data-favorite-btn

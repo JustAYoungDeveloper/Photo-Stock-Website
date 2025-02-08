@@ -581,7 +581,10 @@
         </section>
 
         <!-- FEATURED PHOTOS -->
-        <section class="section feature-photo" aria-labelledby="featured-label">
+        <section
+          class="section featured-photo"
+          aria-labelledby="featured-label"
+        >
           <div class="container">
             <h2 class="title-large section-title" id="featured-label">
               Featured photos
@@ -598,6 +601,60 @@
                 <div class="state-layer"></div>
               </a>
             </div>
+          </div>
+        </section>
+
+        <!-- Popular Videos -->
+        <section
+          class="section popular-video"
+          aria-labelledby="popular-video-label"
+        >
+          <div class="container">
+            <h2 class="title-large section-title" id="popular-video-label">
+              Popular videos
+            </h2>
+            <div class="media-grid" data-video-grid></div>
+
+            <div class="overlay-btn">
+              <a
+                href="./pages/videos/videos.html"
+                class="btn btn-primary"
+                data-ripple
+              >
+                <span class="label-large text">Explore more</span>
+                <div class="state-layer"></div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Collection -->
+        <section class="section collection" aria-labelledby="collection-label">
+          <div class="container">
+            <h2 class="title-large section-title" id="collection-label">
+              Featured collections
+            </h2>
+            <div class="collection-grid" data-collection-grid>
+              <div class="card-grid list-item two-line" data-ripple>
+                <div>
+                  <h3 class="body-large">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p class="body-medium label">59 media</p>
+
+                  <a href="#" class="state-layer"></a>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="./pages/collections/collection.html"
+              class="btn btn-primary"
+              data-ripple
+            >
+              <span class="label-large text">More collections</span>
+              <div class="state-layer"></div>
+            </a>
           </div>
         </section>
       </article>

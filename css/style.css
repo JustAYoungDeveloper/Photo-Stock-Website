@@ -498,8 +498,11 @@ button.disabled {
   display: grid;
   grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
   gap: var(--column-gap);
+  /* Custom */
+  grid-auto-rows: 1fr;
+
   /* For Javascript */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .img-cover {
@@ -546,6 +549,23 @@ button.disabled {
     opacity: 1;
   }
 }
+
+.card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background-color: var(--light-secondary-container);
+  border-radius: var(--radius-small);
+}
+
+.card-badge .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -749,6 +769,23 @@ button.disabled {
   color: var(--on-surface-variant);
 }
 
+.list-item.two-line {
+  justify-content: space-between;
+  padding-inline-end: 12px;
+  height: 72px;
+}
+
+.list-item.two-line .body-large {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.list-item.two-line > .state-layer {
+  pointer-events: all;
+}
+
 /**
  * Navigation
  */
@@ -890,6 +927,11 @@ button.disabled {
 }
 
 .card .card-banner {
+  /* Custom */
+  position: relative;
+  overflow: hidden;
+  max-height: 400px;
+
   aspect-ratio: var(--width) / var(--height);
 }
 
@@ -917,6 +959,10 @@ button.disabled {
 .card .icon-btn.active {
   color: var(--light-inverse-primary);
   --state-layer-bg: var(--light-inverse-primary);
+}
+
+.card.video {
+  background-color: var(--surface-container-highest);
 }
 /**
  * Menu
@@ -1151,9 +1197,17 @@ button.disabled {
   #CURATED PHOTOS & POPULAR VIDEO
 \*-----------------------------------*/
 
+:where(.featured-photo, .popular-video) .column {
+  margin-block-end: -800px;
+}
+
 /*-----------------------------------*\
   #COLLECTION
 \*-----------------------------------*/
+
+.grid-card .label {
+  color: var(--on-surface-variant);
+}
 
 /*-----------------------------------*\
   #FOOTER

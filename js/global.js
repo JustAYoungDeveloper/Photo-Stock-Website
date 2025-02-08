@@ -54,10 +54,10 @@ window.filterObj = {};
  * Initial favourite object in local storage
  */
 
-if (!window.localStorage.getItem("favourite")) {
-  const /** {Object} */ favouriteObj = {
+if (!window.localStorage.getItem("favorite")) {
+  const /** {Object} */ favoriteObj = {
       photos: {},
       videos: {},
     };
-  window.localStorage.setItem("favourite", JSON.stringify(favouriteObj));
+  window.localStorage.setItem("favorite", JSON.stringify(favoriteObj));
 }

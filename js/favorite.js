@@ -33,7 +33,13 @@ export const favorite = ($element, type, id) => {
 
       window.localStorage.setItem("favorite", JSON.stringify(favoriteObj));
     } else {
-      client[type].detail();
+      client[type].detail(id, (data) => {
+        $element.classList.toggle("active");
+        $element.removeAttribute("disabled");
+
+        favoriteObj[type][id] = data;
+        window.localStorage.setItem("favorite", JSON.stringify(favoriteObj));
+      });
     }
   });
 };
